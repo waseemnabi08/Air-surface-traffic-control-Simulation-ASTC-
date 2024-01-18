@@ -8,8 +8,8 @@ public class Main{
         
         Graph graph = new Graph();
         TaskEngine taskEngine = new TaskEngine();
-        Airplane airplane = new Airplane("VN-A123", "A", "F", graph);
-        Airplane airplane2 = new Airplane("XY-23", "B", "E", graph);
+        Airplane airplane = new Airplane("VN-A123", "Lahore", "Karachi", graph);
+        Airplane airplane2 = new Airplane("XY-23", "Sukkur", "Multan", graph);
         Gate gate = new Gate("GATE-1", GateState.EMPTY);
         Runway runway = new Runway("RUNWAY-1",20);
         Taxiway taxiway = new Taxiway("TAXIWAY-1", 25);
@@ -25,21 +25,21 @@ public class Main{
         supplementalData.put("airplane", airplane);
         supplementalData.put("taxiway", taxiway);
         supplementalData.put("airplane2", airplane2);
-        graph.addVertex("A");
-        graph.addVertex("B");
-        graph.addVertex("C");
-        graph.addVertex("D");
-        graph.addVertex("E");
-        graph.addVertex("F");
-        graph.addEdge("A", "B", 4);
-        graph.addEdge("A", "C", 2);
-        graph.addEdge("B", "C", 1);
-        graph.addEdge("B", "D", 5);
-        graph.addEdge("C", "D", 8);
-        graph.addEdge("C", "E", 10);
-        graph.addEdge("D", "E", 2);
-        graph.addEdge("D", "F", 6);
-        graph.addEdge("E", "F", 3);
+        graph.addVertex("Lahore");
+        graph.addVertex("Faisalabad");
+        graph.addVertex("Multan");
+        graph.addVertex("Sukkur");
+        graph.addVertex("Hyderabad");
+        graph.addVertex("Karachi");
+        graph.addEdge("Lahore", "Faisalabad", 4);
+        graph.addEdge("Lahore", "C", 2);
+        graph.addEdge("Faisalabad", "Multan", 1);
+        graph.addEdge("Faisalabad", "Sukkur", 5);
+        graph.addEdge("Multan", "Sukkur", 8);
+        graph.addEdge("Multan", "Hyderabad", 10);
+        graph.addEdge("Sukkur", "Hyderabad", 2);
+        graph.addEdge("Sukkur", "Karachi", 6);
+        graph.addEdge("Hyderabad", "Karachi", 3);
         
         supplementalData.put("graph", graph);
         Task task1 = new Task("TASK-1", 5, 0,  ActionType.MOVE, network, graph);
